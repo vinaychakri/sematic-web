@@ -1,0 +1,1293 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.owl-ontologies.com/Ontology1581945722.owl"
+     xml:base="http://www.owl-ontologies.com/Ontology1581945722.owl"
+     xmlns:ems="http://www.owl-ontologies.com/Ontology1581945722.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#">
+    <owl:Ontology rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#allowed_to_choose -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#allowed_to_choose">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#can_update -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#can_update">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#already_booked_events"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#can_viewed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#can_viewed_by">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_events"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#choosen_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#choosen_by">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#confirmed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#confirmed_by">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#confirms -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#confirms">
+        <owl:inverseOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#confirms"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#confirms"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#contains">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#enquiry_through -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#enquiry_through">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#customer_support"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#enquiry_through"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#customer_support"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_events"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_selected -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_selected">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#invited_through -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#invited_through">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#invitation"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#invited_through"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#invitation"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#invites_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#invites_to">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#invited_through"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#invitation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#invites_to"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#is_a_friend_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#is_a_friend_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#is_larger_than -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#is_larger_than">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_occational_venue"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_size"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#is_smaller_than -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#is_smaller_than">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_lecture_hall"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_size"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#knows -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#knows">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#needs -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#needs">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#needs"/>
+                <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#requires -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#requires">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#send_recipt_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#send_recipt_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#view_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#view_by">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_events"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#booked_event_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_event_name">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#event_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#event_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#food_item_menu -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item_menu">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_Email_Id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_Email_Id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_camera_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_camera_name">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_phone_number -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_phone_number">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_photographer -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_photographer">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_size -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_a_size">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_occational_venue"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_lecture_hall"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_amount">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_event_amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_event_amount">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_event_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_event_name">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_food_amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_food_amount">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_number_of_plates -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_number_of_plates">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_paid -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_paid">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_payed_for -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_payed_for">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_payment_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_payment_id">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_photography_amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_photography_amount">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_photography_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_photography_name">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_updated_event_date_and_time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_updated_event_date_and_time">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_updated_event_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_updated_event_name">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_events"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_user_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_user_name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_venue_amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_venue_amount">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#has_venue_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#has_venue_name">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#user_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#user_id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#already_booked_events -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#already_booked_events">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_occational_venue -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_occational_venue">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#occational_venue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#booked_events -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_events">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#already_booked_events"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_events"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>registered events show to user</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#corperative_event -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#corperative_event">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#requires"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>organizational releated</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#corperative_event_photography -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#corperative_event_photography">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_food_amount"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>&lt;p style=&quot;margin-top: 0&quot;&gt;
+      sub class of
+    &lt;/p&gt;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#customer_support -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#customer_support"/>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#educational_event -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#educational_event">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#requires"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>educational releated</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#educational_event_photography -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#educational_event_photography">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:comment>&lt;p style=&quot;margin-top: 0&quot;&gt;
+      sub class of
+    &lt;/p&gt;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#events -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#events">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_event_amount"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5000</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2002/07/owl#rational"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#event_id"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_event_amount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">80000</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>user has multiple events</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#food_item -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_food_amount"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1000</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_food_amount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">50000</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>every event requires food item for user</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#invitation -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#invitation">
+        <rdfs:comment>user sends invitation for events</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#lecture_venue -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#lecture_venue">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#life_event -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#life_event">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#requires"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>human life releated ex: marriage</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#life_event_photography -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#life_event_photography">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#non_vegitarian_food_item -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#non_vegitarian_food_item">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:comment>food item which include meet</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#occational_venue -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#occational_venue">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#payment -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#payment">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#requires"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#requires"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#requires"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#requires"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>every events has individual payment</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#photography -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#photography">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#corperative_event_photography"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#educational_event_photography"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#life_event_photography"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#sport_event_photography"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_photography_amount"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2000</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_photography_amount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">60000</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>user prefers photos and videos releated to event</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#sport_event -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#sport_event">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#requires"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>sports releated</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#sport_event_photography -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#sport_event_photography">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <rdfs:comment>&lt;p style=&quot;margin-top: 0&quot;&gt;
+      sub class of
+    &lt;/p&gt;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_lecture_hall -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_lecture_hall">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#lecture_venue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_events -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_events">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_events"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#user -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#user">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#corperative_event"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#educational_event"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#life_event"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#sport_event"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#non_vegitarian_food_item"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#allowed_to_choose"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+                            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#venues"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#invited_through"/>
+                <owl:allValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#invitation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user_id"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>customer , how has a choice to select events,food items , photography and venues</rdfs:comment>
+        <rdfs:comment>user has payments for individual events and booked events for cofirmation</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item">
+        <rdfs:subClassOf rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <rdfs:comment>food item does not includes meat</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#venues -->
+
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#venues">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_venue_amount"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">8000</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#has_venue_amount"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">90000</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>venue is the place where events happen</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_occational_venue"/>
+        <ems:has_a_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</ems:has_a_size>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_occational_venue"/>
+        <ems:has_a_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</ems:has_a_size>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_occational_venue"/>
+        <ems:has_a_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</ems:has_a_size>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#booked_event1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_event1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#booked_events"/>
+        <ems:view_by rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user1"/>
+        <ems:booked_event_name>marriage</ems:booked_event_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#event1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#event1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <ems:requires rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment1"/>
+        <ems:event_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ems:event_id>
+        <ems:has_event_name>marriage</ems:has_event_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#event2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#event2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+        <ems:event_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ems:event_id>
+        <ems:has_event_name>birthday</ems:has_event_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#event3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#event3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#events"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#food_item1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#food_item"/>
+        <ems:requires rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#non_vegitarian_food_item1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#non_vegitarian_food_item1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#non_vegitarian_food_item"/>
+        <ems:food_item_menu>chicken biryani
+chucken curry
+fish fired rice</ems:food_item_menu>
+        <ems:has_number_of_plates rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</ems:has_number_of_plates>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#payment1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#payment1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <ems:send_recipt_to rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user1"/>
+        <ems:has_amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</ems:has_amount>
+        <ems:has_payed_for>marriage</ems:has_payed_for>
+        <ems:has_payment_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ems:has_payment_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#payment2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#payment2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <ems:send_recipt_to rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user2"/>
+        <ems:has_amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60000</ems:has_amount>
+        <ems:has_payed_for>veg-biryani</ems:has_payed_for>
+        <ems:has_payment_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ems:has_payment_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#payment3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#payment3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <ems:send_recipt_to rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user3"/>
+        <ems:has_amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</ems:has_amount>
+        <ems:has_payed_for>ignite photography</ems:has_payed_for>
+        <ems:has_payment_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ems:has_payment_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#payment4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#payment4">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment"/>
+        <ems:has_amount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20000</ems:has_amount>
+        <ems:has_payed_for>lecister t shape hall</ems:has_payed_for>
+        <ems:has_payment_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</ems:has_payment_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#photography1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#photography1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <owl:sameAs rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography2"/>
+        <ems:is_a_friend_of rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography2"/>
+        <ems:requires rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment3"/>
+        <ems:has_a_photographer>chakri</ems:has_a_photographer>
+        <ems:has_photography_name>ignite photography</ems:has_photography_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#photography2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#photography2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <ems:has_a_photographer>vamshi</ems:has_a_photographer>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#photography3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#photography3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#photography"/>
+        <ems:has_a_camera_name>canon POWERSHOT G7 X MK2</ems:has_a_camera_name>
+        <ems:has_a_photographer>rahul</ems:has_a_photographer>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_lecture_hall"/>
+        <ems:requires rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment4"/>
+        <ems:has_a_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</ems:has_a_size>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_lecture_hall"/>
+        <ems:has_a_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</ems:has_a_size>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_lecture_hall"/>
+        <ems:has_a_size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</ems:has_a_size>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_event1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_event1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_events"/>
+        <ems:can_viewed_by rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_event2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_event2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_events"/>
+        <ems:can_viewed_by rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_event3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_event3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#updated_booked_events"/>
+        <ems:can_viewed_by rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#user1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#user1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <owl:sameAs rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user2"/>
+        <ems:confirms rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment1"/>
+        <ems:knows rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user2"/>
+        <ems:has_a_Email_Id>vinaychakri143@gmail.com</ems:has_a_Email_Id>
+        <ems:has_a_phone_number rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9948917746</ems:has_a_phone_number>
+        <ems:has_paid rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50000</ems:has_paid>
+        <ems:has_updated_event_date_and_time>22 march 2020 10:00am</ems:has_updated_event_date_and_time>
+        <ems:has_updated_event_name>marriage</ems:has_updated_event_name>
+        <ems:has_user_name>vinaychakri</ems:has_user_name>
+        <ems:user_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ems:user_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#user2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#user2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <ems:confirms rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment2"/>
+        <ems:has_a_Email_Id>amar@gmail.com</ems:has_a_Email_Id>
+        <ems:has_a_phone_number rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9948917746</ems:has_a_phone_number>
+        <ems:has_paid rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60000</ems:has_paid>
+        <ems:has_updated_event_date_and_time>25 july 2020 12:00pm</ems:has_updated_event_date_and_time>
+        <ems:has_updated_event_name>birthday party</ems:has_updated_event_name>
+        <ems:has_user_name>amar</ems:has_user_name>
+        <ems:user_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</ems:user_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#user3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#user3">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#user"/>
+        <ems:confirms rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment3"/>
+        <ems:has_a_Email_Id>mail@gmail.com</ems:has_a_Email_Id>
+        <ems:has_a_phone_number rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9985941276</ems:has_a_phone_number>
+        <ems:has_paid rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</ems:has_paid>
+        <ems:has_updated_event_date_and_time>26 january 2021 1:00 pm</ems:has_updated_event_date_and_time>
+        <ems:has_updated_event_name>reciption</ems:has_updated_event_name>
+        <ems:has_user_name>mali</ems:has_user_name>
+        <ems:user_id rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</ems:user_id>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item1">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item"/>
+        <ems:requires rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#payment2"/>
+        <ems:food_item_menu>veg-biryani</ems:food_item_menu>
+        <ems:has_number_of_plates rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</ems:has_number_of_plates>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item2">
+        <rdf:type rdf:resource="http://www.owl-ontologies.com/Ontology1581945722.owl#vegitarian_food_item"/>
+        <ems:food_item_menu>panner curry</ems:food_item_menu>
+        <ems:has_number_of_plates rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</ems:has_number_of_plates>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue1"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue2"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#banquet_ocational_venue3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_1"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_2"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_2"/>
+            <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1581945722.owl#t_shape_hall_3"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

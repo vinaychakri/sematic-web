@@ -1,0 +1,54 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ems: <http://www.owl-ontologies.com/Ontology1581945722.owl#>
+SELECT ?user ?updated_event_name ?updated_event_date
+	WHERE { ?a a ems:user ;
+                                       ems:has_user_name ?user ;
+                                        ems:has_updated_event_name ?updated_event_name ;
+                                          ems:has_updated_event_date_and_time?updated_event_date.
+ }
+
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ems: <http://www.owl-ontologies.com/Ontology1581945722.owl#>
+SELECT ?payment_id ?payed_for ?amount
+	WHERE { ?a a ems:payment ;
+                                       ems:has_payment_id ?payment_id ;
+                                        ems:has_payed_for ?payed_for ; 
+                                        ems:has_amount ?amount.                                        
+ }
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ems: <http://www.owl-ontologies.com/Ontology1581945722.owl#>
+SELECT ?user_id ?payer_name ?paid_amount 
+	WHERE { ?a a ems:user;
+                                       ems:user_id ?user_id ;
+                                        ems:has_user_name ?payer_name ; 
+                                        ems:has_paid ?paid_amount.
+                                          
+ }
+
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ems: <http://www.owl-ontologies.com/Ontology1581945722.owl#>
+SELECT ?food_item ?number_of_plates 
+	WHERE { ?a a ems:vegitarian_food_item;
+                                       ems:food_item_menu ?food_item ;
+                                        ems:has_number_of_plates ?number_of_plates .
+                                          
+ }
